@@ -10,6 +10,14 @@ import { MenuComponent } from './Menu/menu.component';
 import { E404Component } from './core/Components/e404/e404.component';
 import { HomeComponent } from './core/Components/home/home.component';
 import { AboutComponent } from './core/Components/about/about.component';
+import { UserlistComponent } from './User/userlist/userlist.component';
+import { RequestlistComponent } from './Request/requestlist/requestlist.component';
+import { ProductlistComponent } from './Product/productlist/productlist.component';
+import { VendorlistComponent } from './Vendor/vendorlist/vendorlist.component';
+import { RequestlinelistComponent } from './Requestline/requestlinelist/requestlinelist.component';
+import { MenuItemsComponent } from './Menu/menu-items/menu-items.component';
+import { UserDetailComponent } from './User/user-detail/user-detail.component';
+import { UserEditComponent } from './User/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +25,15 @@ import { AboutComponent } from './core/Components/about/about.component';
     MenuComponent,
     E404Component,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    UserlistComponent,
+    RequestlistComponent,
+    ProductlistComponent,
+    VendorlistComponent,
+    RequestlinelistComponent,
+    MenuItemsComponent,
+    UserDetailComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

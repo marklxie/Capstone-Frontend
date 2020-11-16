@@ -1,0 +1,34 @@
+<h3>User Details</h3>
+<button (click)="back()">Back</button>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <input type="text" value="{{user.id}}" disabled>
+    </tr>
+    <tr>
+        <th>Username</th>
+        <input type="text" value="{{user.username}}" disabled>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <input type="text" value="{{user.firstname}} {{user.lastname}}" disabled>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <input type="text" value="{{user.phone}}" disabled>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <input type="text" value="{{user.email}}" disabled>
+    </tr>
+    <tr>
+        <th>IsReviewer</th>
+        <input type="text" value="{{user.isReviewer}}" disabled>
+    </tr>
+    <tr>
+        <th>IsAdmin</th>
+        <input type="text" value="{{user.isAdmin}}" disabled>
+    </tr>
+</table>
+
+<button>Delete</button>

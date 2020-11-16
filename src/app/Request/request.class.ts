@@ -1,4 +1,6 @@
-class PRequest{
+import { User } from '../User/user.class';
+
+export class PRequest{
     id: number = 0;
     description: string = "";
     justification: string;
@@ -7,4 +9,6 @@ class PRequest{
     status: string = "";
     total: number = 0;
     userId: number;
+    user: User;
+    constructor(){}
 }
