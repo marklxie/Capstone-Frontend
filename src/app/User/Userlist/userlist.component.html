@@ -1,6 +1,7 @@
 
 <h3> User List</h3>
-<table class="table">
+<input [(ngModel)]="searchcriteria" type="text" placeholder="search">
+<table class="table" *ngIf=users>
     <tr>
         <th>Id</th>
         <th>Username</th>
@@ -12,7 +13,7 @@
         <th>Detail</th>
         <th>Edit</th>
     </tr>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users | search:keys:searchcriteria" >
         <td>{{user.id}}</td>
         <td>{{user.username}}</td>
         <td>{{user.lastname}}, {{user.firstname}}</td>

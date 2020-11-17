@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { SystemService } from 'src/app/core/system.service';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-user-login',
@@ -16,22 +17,27 @@ export class UserLoginComponent implements OnInit {
   constructor(
     private usersvc: UserService,
     private router: Router,
+    private system: SystemService
   ) { }
 
   ngOnInit(): void {
   }
 
   login():User{
-    this.usersvc.login(this.username,this.password).subscribe(
+    this.usersvc.login(this.username,this.password)
+    .subscribe(
       res => {
         console.log(res);
+        localStorage.setItem('user',JSON.stringify(res));
+        this.system.hold = res;
+        this.system.usercurrent();
         this.router.navigateByUrl("/home");},
-      err => {
+       err => {
         console.log(err);
          this.username = ""; 
          this.password = "";}
-    )
-    return null;
+       )
+    return this.system.hold;
   }
   check():void{
     console.log(this.username);

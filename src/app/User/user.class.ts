@@ -4,10 +4,9 @@ export class User{
     password: string = "";
     firstname: string = "";
     lastname: string = "";
-    phone: string;
-    email: string;
+    phone: string = "";
+    email: string = "";
     isReviewer: boolean = false;
     isAdmin: boolean = false;
     constructor(){}
 }
-

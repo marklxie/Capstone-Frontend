@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
+import { SystemService } from '../core/system.service';
 import { Menu } from './menu.class';
 @Component({
   selector: 'app-menu',
@@ -9,7 +10,9 @@ export class MenuComponent implements OnInit {
 
   menu: Menu[] = [];
   
-  constructor() { } 
+  constructor(
+    private system:SystemService
+  ) { } 
 
   ngOnInit(): void {
     let home: Menu = {display:"Home", route:"/home"};
@@ -19,6 +22,8 @@ export class MenuComponent implements OnInit {
     let vendor: Menu = {display:"Vendor", route:"/vendors/list"};
     this.menu.push(home, about, user, product, vendor);
   };
-  
+  logout():void{
+    this.system.logout();
+  }
 
 }
