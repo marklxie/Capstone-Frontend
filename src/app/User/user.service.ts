@@ -20,7 +20,7 @@ export class UserService {
     return this.http.get(`${baseurl}`) as Observable<User[]>;
   }
 
-  get(num: number): Observable<User>{
+  getUser(num: number): Observable<User>{
     return this.http.get(`${baseurl}/${num}`) as Observable<User>;
   }
 
@@ -36,4 +36,7 @@ export class UserService {
     return this.http.delete(`${baseurl}/${num}`) as Observable<User>;
   }
   
+  login(username:string, password:string): Observable<User>{
+    return this.http.get(`${baseurl}/${username}/${password}`) as Observable<User>;
+  }
 }

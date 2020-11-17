@@ -10,13 +10,9 @@ import { UserService } from '../user.service';
 })
 export class UserDetailComponent implements OnInit {
 
-  private _user: User = null;
-  public get user(): User {
-    return this._user;
-  }
-  public set user(value: User) {
-    this._user = value;
-  }
+  user: User;
+  buttonHide:boolean = false;
+
   constructor(
     private usersvc:UserService,
     private route: ActivatedRoute,
@@ -25,14 +21,37 @@ export class UserDetailComponent implements OnInit {
   
   ngOnInit(): void {
     let id = +this.route.snapshot.params.id;
-    this.usersvc.get(id).subscribe(
-      res =>{ console.log(res);
-         this.user= res;},
-      err =>{ console.log(err)}
+    this.usersvc.getUser(id).subscribe(
+      res =>{ 
+        console.log(res);
+         this.user= res;
+        },
+      err =>{ 
+        console.log(err)
+      }
     )
   }
 
   back():void{
     this.router.navigateByUrl("/users/list");
+  }
+
+  hide():void{
+    this.buttonHide = !this.buttonHide;
+  }
+
+  delete(): void{
+    let id = +this.route.snapshot.params.id;
+    this.usersvc.delete(id).subscribe(
+      res =>{
+        console.log(res);
+        this.router.navigateByUrl("/users/list");
+      },
+      err =>{
+        console.error(err);
+      }
+    )
+
+   
   }
 }

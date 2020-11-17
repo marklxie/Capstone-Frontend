@@ -1,6 +1,6 @@
 <h3>User Details</h3>
 <button (click)="back()">Back</button>
-<table class="table">
+<table class="table" *ngIf="user">
     <tr>
         <th>Id</th>
         <input type="text" value="{{user.id}}" disabled>
@@ -23,12 +23,14 @@
     </tr>
     <tr>
         <th>IsReviewer</th>
-        <input type="text" value="{{user.isReviewer}}" disabled>
+        <input type="checkbox" [checked]="user.isReviewer" disabled>
     </tr>
     <tr>
         <th>IsAdmin</th>
-        <input type="text" value="{{user.isAdmin}}" disabled>
+        <input type="checkbox" [checked]="user.isAdmin" disabled>
     </tr>
 </table>
 
-<button>Delete</button>
+<button (click)="hide()" >Delete</button>
+<button *ngIf=buttonHide (click)="hide(); delete()">Yes, Delete</button>
+<button *ngIf=buttonHide (click)="hide()" >No, Do not Delete</button>

@@ -20,11 +20,12 @@
         <td>{{user.email}}</td>
         <td>{{user.isReviewer ? "Yes": "No"}}</td>
         <td>{{user.isAdmin ? "Yes": "No"}}</td>
-        <td routerLink="/user/detail/{{user.id}}">
+        <td routerLink="/users/detail/{{user.id}}">
             <button>Detail</button>
         </td>
-        <td routerLink="/user/edit/{{user.id}}">
+        <td routerLink="/users/edit/{{user.id}}">
             <button>Edit</button>
         </td>
     </tr>
 </table>
+<button routerLink="/users/new/">Create New User</button>

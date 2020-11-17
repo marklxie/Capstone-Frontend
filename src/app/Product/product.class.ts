@@ -4,9 +4,9 @@ export class Product{
     partNumber: string = "";
     name: string = "";
     price: number = 0;
-    unit: string;
-    photopath: string;
-    vendorId: number;
-    vendor: Vendor;
+    unit: string = "Each";
+    photopath: string = null;
+    vendorId: number = 0;
+    vendor: Vendor = null;
     constructor(){}
 }

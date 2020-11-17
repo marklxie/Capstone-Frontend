@@ -18,6 +18,8 @@ import { RequestlinelistComponent } from './Requestline/requestlinelist/requestl
 import { MenuItemsComponent } from './Menu/menu-items/menu-items.component';
 import { UserDetailComponent } from './User/user-detail/user-detail.component';
 import { UserEditComponent } from './User/user-edit/user-edit.component';
+import { UserCreateComponent } from './User/user-create/user-create.component';
+import { UserLoginComponent } from './User/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { UserEditComponent } from './User/user-edit/user-edit.component';
     RequestlinelistComponent,
     MenuItemsComponent,
     UserDetailComponent,
-    UserEditComponent
+    UserEditComponent,
+    UserCreateComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

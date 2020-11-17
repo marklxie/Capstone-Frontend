@@ -1,7 +1,7 @@
-<h3>Edit User</h3>
+<h3>Create New User</h3>
 <button (click)="back()">Back</button>
 <p>Anything with * next to it is required</p>
-<table *ngIf=user>
+<table>
     <tr>
         <th>Username</th>
         <input type="text" [(ngModel)]="user.username">
@@ -39,4 +39,4 @@
         <input type="checkbox"  [checked]="user.isAdmin" [(ngModel)]="user.isAdmin">
     </tr>
 </table>
-<button (click)="save()">Save</button>
+<button (click)="createNew()">Create User</button>

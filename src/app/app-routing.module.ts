@@ -10,6 +10,8 @@ import { RequestlinelistComponent } from './Requestline/requestlinelist/requestl
 import { RequestlistComponent } from './Request/requestlist/requestlist.component';
 import { UserDetailComponent } from './User/user-detail/user-detail.component';
 import { UserEditComponent } from './User/user-edit/user-edit.component';
+import { UserCreateComponent } from './User/user-create/user-create.component';
+import { UserLoginComponent } from './User/user-login/user-login.component';
 
 
 const routes: Routes = [
@@ -18,12 +20,14 @@ const routes: Routes = [
   {path:"about", component: AboutComponent},
   {path:"e404", component: E404Component},
   {path:"users/list", component: UserlistComponent},
-  {path:"user/detail/:id", component:UserDetailComponent},
-  {path:"user/edit/:id", component:UserEditComponent},
+  {path:"users/detail/:id", component:UserDetailComponent},
+  {path:"users/edit/:id", component:UserEditComponent},
+  {path:"users/new", component:UserCreateComponent},
+  {path:"login", component:UserLoginComponent},
   {path:"products/list", component: ProductlistComponent},
   {path:"vendors/list", component:VendorlistComponent},
-  {path:"requestline/list", component:RequestlinelistComponent},
-  {path:"request/list", component:RequestlistComponent},
+  {path:"requestlines/list", component:RequestlinelistComponent},
+  {path:"requests/list", component:RequestlistComponent},
   {path:"**", component: E404Component}
 
 ];
