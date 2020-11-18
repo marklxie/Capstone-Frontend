@@ -11,6 +11,7 @@
         <th>Total</th>
         <th>User Id</th>
         <th>Request User</th>
+        <th>Add Lines</th>
     </tr>
     <tr *ngFor="let request of requests | search:keys:searchcriteria" >
         <td>{{request.id}}</td>
@@ -22,7 +23,9 @@
         <td>{{request.total}}</td>
         <td>{{request.userId}}</td>
         <td>{{request.user.firstname}} {{request.user.lastname}}</td>
-
+        <td>
+            <button routerLink="/requests/lines/{{request.id}}">Go</button>
+        </td>
     </tr>
 </table>
 <button routerLink="/requests/new/">Create New Request</button>

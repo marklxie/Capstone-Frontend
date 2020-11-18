@@ -1,1 +1,21 @@
-<p>request-create works!</p>
+<h3>Create New Request</h3>
+<button (click)="back()">Back</button>
+<p>Anything with * next to it is required</p>
+<table *ngIf=request>
+    <tr>
+        <th>Description</th>
+        <input type="text" [(ngModel)]="request.description">
+        <span>*</span>
+    </tr>
+    <tr>
+        <th>Justification</th>
+        <input type="text" [(ngModel)]="request.justification">
+        <span>*</span>
+    </tr>
+    <tr>
+        <th>Delivery Mode</th>
+        <input type="text" [(ngModel)]="request.deliveryMode">
+        <span>*</span>
+    </tr>
+</table>
+<button (click)="createNew()">Create Request</button>

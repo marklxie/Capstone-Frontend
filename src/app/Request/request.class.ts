@@ -6,7 +6,7 @@ export class PRequest{
     justification: string;
     rejectionreason: string;
     deliveryMode: string = "";
-    status: string = "";
+    status: string = "NEW";
     total: number = 0;
     userId: number;
     user: User;

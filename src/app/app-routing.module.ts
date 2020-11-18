@@ -18,6 +18,10 @@ import { VendorDetailComponent } from './Vendor/vendor-detail/vendor-detail.comp
 import { ProductDetailComponent } from './Product/product-detail/product-detail.component';
 import { ProductEditComponent } from './Product/product-edit/product-edit.component';
 import { ProductCreateComponent } from './Product/product-create/product-create.component';
+import { RequestCreateComponent } from './Request/request-create/request-create.component';
+import { RequestDetailComponent } from './Request/request-detail/request-detail.component';
+import { RequestEditComponent } from './Request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './Request/request-lines/request-lines.component';
 
 
 const routes: Routes = [
@@ -40,6 +44,10 @@ const routes: Routes = [
   {path:"vendors/new", component: VendorCreateComponent},
   {path:"requestlines/list", component: RequestlinelistComponent},
   {path:"requests/list", component: RequestlistComponent},
+  {path:"requests/new", component: RequestCreateComponent},
+  {path:"requests/detail/:id", component:RequestDetailComponent},
+  {path:"requests/edit/:id", component:RequestEditComponent},
+  {path:"requests/lines/:id", component:RequestLinesComponent},
   {path:"**", component: E404Component}
 
 ];
