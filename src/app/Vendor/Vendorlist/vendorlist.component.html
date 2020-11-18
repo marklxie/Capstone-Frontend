@@ -1,1 +1,36 @@
-<p>vendorlist works!</p>
+<h3> Vendors List</h3>
+<input [(ngModel)]="searchcriteria" type="text" placeholder="search">
+<table class="table" *ngIf=vendors>
+    <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Detail</th>
+        <th>Edit</th>
+    </tr>
+    <tr *ngFor="let vendor of vendors | search:keys:searchcriteria" >
+        <td>{{vendor.id}}</td>
+        <td>{{vendor.code}}</td>
+        <td>{{vendor.name}}</td>
+        <td>{{vendor.address}}</td>
+        <td>{{vendor.city}}</td>
+        <td>{{vendor.state}}</td>
+        <td>{{vendor.zip}}</td>
+        <td>{{vendor.phone}}</td>
+        <td>{{vendor.email}}</td>
+
+        <td routerLink="/vendors/detail/{{vendor.id}}">
+            <button>Detail</button>
+        </td>
+        <td routerLink="/vendors/edit/{{vendor.id}}">
+            <button>Edit</button>
+        </td>
+    </tr>
+</table>
+<button routerLink="/vendors/new/">Create New vendor</button>

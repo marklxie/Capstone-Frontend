@@ -19,7 +19,7 @@ export class MenuComponent implements OnInit {
     let about: Menu = {display:"About", route:"/about"};
     let user: Menu = {display:"Users", route:"/users/list"};
     let product: Menu = {display:"Products", route:"/products/list"};
-    let vendor: Menu = {display:"Vendor", route:"/vendors/list"};
+    let vendor: Menu = {display:"Vendors", route:"/vendors/list"};
     this.menu.push(home, about, user, product, vendor);
   };
   logout():void{

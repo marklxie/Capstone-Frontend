@@ -12,6 +12,9 @@ import { UserDetailComponent } from './User/user-detail/user-detail.component';
 import { UserEditComponent } from './User/user-edit/user-edit.component';
 import { UserCreateComponent } from './User/user-create/user-create.component';
 import { UserLoginComponent } from './User/user-login/user-login.component';
+import { VendorCreateComponent } from './Vendor/vendor-create/vendor-create.component';
+import { VendorEditComponent } from './Vendor/vendor-edit/vendor-edit.component';
+import { VendorDetailComponent } from './Vendor/vendor-detail/vendor-detail.component';
 
 
 const routes: Routes = [
@@ -20,14 +23,17 @@ const routes: Routes = [
   {path:"about", component: AboutComponent},
   {path:"e404", component: E404Component},
   {path:"users/list", component: UserlistComponent},
-  {path:"users/detail/:id", component:UserDetailComponent},
-  {path:"users/edit/:id", component:UserEditComponent},
-  {path:"users/new", component:UserCreateComponent},
-  {path:"login", component:UserLoginComponent},
+  {path:"users/detail/:id", component: UserDetailComponent},
+  {path:"users/edit/:id", component: UserEditComponent},
+  {path:"users/new", component: UserCreateComponent},
+  {path:"login", component: UserLoginComponent},
   {path:"products/list", component: ProductlistComponent},
-  {path:"vendors/list", component:VendorlistComponent},
-  {path:"requestlines/list", component:RequestlinelistComponent},
-  {path:"requests/list", component:RequestlistComponent},
+  {path:"vendors/list", component: VendorlistComponent},
+  {path:"vendors/detail/:id", component: VendorDetailComponent},
+  {path:"vendors/edit/:id", component: VendorEditComponent},
+  {path:"vendors/new", component: VendorCreateComponent},
+  {path:"requestlines/list", component: RequestlinelistComponent},
+  {path:"requests/list", component: RequestlistComponent},
   {path:"**", component: E404Component}
 
 ];

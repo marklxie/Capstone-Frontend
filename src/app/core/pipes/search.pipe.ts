@@ -14,7 +14,11 @@ export class SearchPipe implements PipeTransform {
     searchcriteria = searchcriteria.toLowerCase();
     for(let any of everything){
       for(let key of keys){
-        if(any[key] != null && ((typeof any[key]) !== 'boolean' && any[key].toString().includes(searchcriteria))){
+        // if(any[key] != null){
+        //   console.log(any[key]);
+        //   console.log(any[key].toString().toLowerCase().includes(searchcriteria));
+        // }
+        if(any[key] != null && ((typeof any[key]) !== 'boolean' && any[key].toString().toLowerCase().includes(searchcriteria))){
           hold.push(any);
           break;
         }

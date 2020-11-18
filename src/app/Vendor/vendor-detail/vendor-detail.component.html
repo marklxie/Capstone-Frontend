@@ -1,1 +1,46 @@
-<p>vendor-detail works!</p>
+<h3>Vendor Details</h3>
+<button (click)="back()">Back</button>
+<table *ngIf="vendor">
+    <tr>
+        <th>Code</th>
+        <input type="text" [(ngModel)]="vendor.code" disabled>
+        
+    </tr>
+    <tr>
+        <th>Name</th>
+        <input type="text" [(ngModel)]="vendor.name" disabled>
+        
+    </tr>
+    <tr>
+        <th>Address</th>
+        <input type="text" [(ngModel)]="vendor.address" disabled>
+        
+    </tr>
+    <tr>
+        <th>City</th>
+        <input type="text" [(ngModel)]="vendor.city" disabled>
+        
+    </tr>
+    <tr>
+        <th>State</th>
+        <input type="text" [(ngModel)]="vendor.state" disabled>
+        
+    </tr>
+    <tr>
+        <th>Zip Code</th>
+        <input type="text" [(ngModel)]="vendor.zip" disabled>
+        
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <input type="text" [(ngModel)]="vendor.phone" disabled>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <input type="text" [(ngModel)]="vendor.email" disabled>
+    </tr>
+</table>
+
+<button (click)="hide()" >Delete</button>
+<button *ngIf=buttonHide (click)="hide(); delete()">Yes, Delete</button>
+<button *ngIf=buttonHide (click)="hide()" >No, Do not Delete</button>

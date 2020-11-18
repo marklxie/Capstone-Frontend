@@ -6,7 +6,7 @@ export class Vendor{
     city: string = "";
     state: string = "";
     zip: string = "";
-    phone: string;
-    email: string;
+    phone: string ="";
+    email: string ="";
     constructor(){}
 }

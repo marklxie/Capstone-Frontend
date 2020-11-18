@@ -1,1 +1,44 @@
-<p>vendor-create works!</p>
+<h3>Create New vendor</h3>
+<button (click)="back()">Back</button>
+<p>Anything with * next to it is required</p>
+<table>
+    <tr>
+        <th>Code</th>
+        <input type="text" [(ngModel)]="vendor.code">
+        <span>*</span>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <input type="text" [(ngModel)]="vendor.name">
+        <span>*</span>
+    </tr>
+    <tr>
+        <th>Address</th>
+        <input type="text" [(ngModel)]="vendor.address">
+        <span>*</span>
+    </tr>
+    <tr>
+        <th>City</th>
+        <input type="text" [(ngModel)]="vendor.city">
+        <span>*</span>
+    </tr>
+    <tr>
+        <th>State</th>
+        <input type="text" [(ngModel)]="vendor.state" ngmodel maxlength=2>
+        <span>*</span>
+    </tr>
+    <tr>
+        <th>Zip Code</th>
+        <input type="text" [(ngModel)]="vendor.zip" ngmodel maxlength=5>
+        <span>*</span>
+    </tr>
+    <tr>
+        <th>Phone Number</th>
+        <input type="text" [(ngModel)]="vendor.phone" >
+    </tr>
+    <tr>
+        <th>Email</th>
+        <input type="text" [(ngModel)]="vendor.email" >
+    </tr>
+</table>
+<button (click)="createNew()">Create Vendor</button>
