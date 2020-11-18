@@ -24,7 +24,7 @@ export class VendorService {
   }
 
   change(vendor: Vendor): Observable<any>{
-    return this.http.put(`${baseurl}/${vendor.id}`, Vendor) as Observable<Vendor>;
+    return this.http.put(`${baseurl}/${vendor.id}`, vendor) as Observable<Vendor>;
   }
 
   create(vendor:Vendor): Observable<any>{

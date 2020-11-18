@@ -19,7 +19,7 @@ export class UserlistComponent implements OnInit {
   keys: string[];
   searchcriteria: string = "";
   ngOnInit(): void {
-    console.log(this.system.user);
+    console.log(this.system.loggedInUser);
     this.usersvc.list().subscribe(
       res => { 
         console.log(res);

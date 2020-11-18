@@ -1,1 +1,28 @@
-<p>requestlist works!</p>
+<h3> Vendors List</h3>
+<input [(ngModel)]="searchcriteria" type="text" placeholder="search">
+<table class="table" *ngIf=requests>
+    <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Rejection Reason</th>
+        <th>Delivery Mode</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User Id</th>
+        <th>Request User</th>
+    </tr>
+    <tr *ngFor="let request of requests | search:keys:searchcriteria" >
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.justification}}</td>
+        <td>{{request.rejectionreason}}</td>
+        <td>{{request.deliveryMode}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+        <td>{{request.userId}}</td>
+        <td>{{request.user.firstname}} {{request.user.lastname}}</td>
+
+    </tr>
+</table>
+<button routerLink="/requests/new/">Create New Request</button>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/User/user.class';
 import { SystemService } from '../../system.service';
 
 @Component({
@@ -8,9 +9,14 @@ import { SystemService } from '../../system.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private system: SystemService
+  ) { }
+
+  user: User = null;
 
   ngOnInit(): void {
+    this.user = this.system.loggedInUser;
   }
 
 }

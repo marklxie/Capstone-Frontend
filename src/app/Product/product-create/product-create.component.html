@@ -1,0 +1,29 @@
+<h3>Create New Product</h3>
+<button (click)="back()">Back</button>
+<table class="table" *ngIf="product">
+
+    <tr>
+        <th>PartNumber</th>
+        <input type="text" [(ngModel)]="product.partNumber" >
+    </tr>
+    <tr>
+        <th>Name</th>
+        <input type="text" [(ngModel)]="product.name" >
+    </tr>
+    <tr>
+        <th>Price</th>
+        <input type="number" [(ngModel)]="product.price" >
+    </tr>
+    <tr>
+        <th>Unit</th>
+        <input type="text" [(ngModel)]="product.unit" >
+    </tr>
+    <tr>
+        <th>Photopath</th>
+        <input type="text" [(ngModel)]="product.photopath" >
+    </tr>
+    <select [(ngModel)] = product.vendorId>
+        <option *ngFor="let vendor of vendors" [ngValue]=vendor.id>{{vendor.name}}</option>
+    </select>
+</table>
+<button (click)="createNew()">Create New Product</button>

@@ -26,6 +26,15 @@ import { UserSearchPipe } from './User/user-search.pipe';
 import { VendorCreateComponent } from './Vendor/vendor-create/vendor-create.component';
 import { VendorEditComponent } from './Vendor/vendor-edit/vendor-edit.component';
 import { VendorDetailComponent } from './Vendor/vendor-detail/vendor-detail.component';
+import { ProductCreateComponent } from './Product/product-create/product-create.component';
+import { ProductEditComponent } from './Product/product-edit/product-edit.component';
+import { ProductDetailComponent } from './Product/product-detail/product-detail.component';
+import { RequestCreateComponent } from './Request/request-create/request-create.component';
+import { RequestEditComponent } from './Request/request-edit/request-edit.component';
+import { RequestDetailComponent } from './Request/request-detail/request-detail.component';
+import { RequestLinesComponent } from './Request/request-lines/request-lines.component';
+import { RequestReviewListComponent } from './Request/request-review-list/request-review-list.component';
+import { RequestReviewItemComponent } from './Request/request-review-item/request-review-item.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +58,16 @@ import { VendorDetailComponent } from './Vendor/vendor-detail/vendor-detail.comp
     UserSearchPipe,
     VendorCreateComponent,
     VendorEditComponent,
-    VendorDetailComponent
+    VendorDetailComponent,
+    ProductCreateComponent,
+    ProductEditComponent,
+    ProductDetailComponent,
+    RequestCreateComponent,
+    RequestEditComponent,
+    RequestDetailComponent,
+    RequestLinesComponent,
+    RequestReviewListComponent,
+    RequestReviewItemComponent
   ],
   imports: [
     BrowserModule,

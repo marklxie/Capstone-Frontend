@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
 export class UserLoginComponent implements OnInit {
   username: string = "";
   password: string = "";
-  user: User;
+  user: User = null;
   constructor(
     private usersvc: UserService,
     private router: Router,
@@ -29,7 +29,7 @@ export class UserLoginComponent implements OnInit {
       res => {
         console.log(res);
         localStorage.setItem('user',JSON.stringify(res));
-        this.system.hold = res;
+        this.system.loggedInUser = res as User;
         this.system.usercurrent();
         this.router.navigateByUrl("/home");},
        err => {
@@ -37,7 +37,7 @@ export class UserLoginComponent implements OnInit {
          this.username = ""; 
          this.password = "";}
        )
-    return this.system.hold;
+    return this.system.loggedInUser;
   }
   check():void{
     console.log(this.username);

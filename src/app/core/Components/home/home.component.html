@@ -1,1 +1,7 @@
-<p>home works!</p>
+<h5>Welcome Home!</h5>
+<table class="table">
+    <tr *ngIf=user>
+        <td>Name</td>
+        <td>{{user.firstname}}{{user.lastname}}</td>
+    </tr>
+</table>

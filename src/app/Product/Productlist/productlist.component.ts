@@ -14,6 +14,8 @@ export class ProductlistComponent implements OnInit {
   ) { }
   
     products: Product[];
+    keys: string[] = Object.getOwnPropertyNames(new Product);
+    searchcriteria: string = "";
 
   ngOnInit(): void {
     this.productsvc.list().subscribe(

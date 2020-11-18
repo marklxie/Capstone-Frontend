@@ -1,5 +1,6 @@
-<p>productlist works!</p>
-<table class="table">
+<h3>Product List</h3>
+<input [(ngModel)]="searchcriteria" type="text" placeholder="search">
+<table class="table" *ngIf=products>
     <tr>
         <th>Id</th>
         <th>Part Number</th>
@@ -7,15 +8,24 @@
         <th>Price</th>
         <th>Unit</th>
         <th>PhotoPath</th>
-        <th>Vendor Id</th>
+        <th>Vendor</th>
+        <th>Detail</th>
+        <th>Edit</th>
     </tr>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | search:keys:searchcriteria" >
         <td>{{product.id}}</td>
         <td>{{product.partNumber}}</td>
         <td>{{product.name}}</td>
         <td>{{product.price}}</td>
         <td>{{product.unit}}</td>
         <td>{{product.photopath}}</td>
-        <td>{{product.vendorId}}</td>
+        <td>{{product.vendor.name}}</td>
+        <td routerLink="/products/detail/{{product.id}}">
+            <button>Detail</button>
+        </td>
+        <td routerLink="/products/edit/{{product.id}}">
+            <button>Edit</button>
+        </td>
     </tr>
 </table>
+<button routerLink="/products/new/">Create New Product</button>

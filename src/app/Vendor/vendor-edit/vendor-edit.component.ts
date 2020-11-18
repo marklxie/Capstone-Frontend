@@ -9,12 +9,14 @@ import { VendorService } from '../vendor.service';
   styleUrls: ['./vendor-edit.component.css']
 })
 export class VendorEditComponent implements OnInit {
-  vendor: Vendor;
+  
   constructor(
     private vendorsvc:VendorService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
+
+  vendor: Vendor;
 
   ngOnInit(): void {
     let id = +this.route.snapshot.params.id;

@@ -15,6 +15,9 @@ import { UserLoginComponent } from './User/user-login/user-login.component';
 import { VendorCreateComponent } from './Vendor/vendor-create/vendor-create.component';
 import { VendorEditComponent } from './Vendor/vendor-edit/vendor-edit.component';
 import { VendorDetailComponent } from './Vendor/vendor-detail/vendor-detail.component';
+import { ProductDetailComponent } from './Product/product-detail/product-detail.component';
+import { ProductEditComponent } from './Product/product-edit/product-edit.component';
+import { ProductCreateComponent } from './Product/product-create/product-create.component';
 
 
 const routes: Routes = [
@@ -27,7 +30,10 @@ const routes: Routes = [
   {path:"users/edit/:id", component: UserEditComponent},
   {path:"users/new", component: UserCreateComponent},
   {path:"login", component: UserLoginComponent},
-  {path:"products/list", component: ProductlistComponent},
+  {path:"products/list", component: ProductlistComponent},  
+  {path:"products/detail/:id", component: ProductDetailComponent},
+  {path:"products/edit/:id", component: ProductEditComponent},
+  {path:"products/new", component: ProductCreateComponent},
   {path:"vendors/list", component: VendorlistComponent},
   {path:"vendors/detail/:id", component: VendorDetailComponent},
   {path:"vendors/edit/:id", component: VendorEditComponent},
