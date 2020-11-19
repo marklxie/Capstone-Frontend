@@ -17,11 +17,10 @@
     </tr>
 </table>
 
-<button>Create New Line</button>
 <h2>
     Line Items for Request
 </h2>
-
+<button (click)="toLineCreate()">Create New Request Line</button>
 <table class="table">
     <tr>
         <th>Line Item Id</th>
@@ -35,7 +34,7 @@
         <td>{{line.product.name}}</td>
         <td>{{line.quantity}}</td>
         <td>
-            <button>Edit</button>
+            <button (click)="toLineEdit(line.id)">Edit</button>
         </td>
         <td>
             <button (click)="revealDelete(line.id)" value={{line.id}} id={{line.id}}>Delete</button>

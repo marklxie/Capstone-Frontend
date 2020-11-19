@@ -74,10 +74,19 @@ export class RequestLinesComponent implements OnInit {
       this.lineitemsvc.delete(idNum).subscribe(
         res => {
           console.log(res);
-          this.router.navigateByUrl(`/requests/lines/${this.request.id}`);
+          location.reload();
           this.buttonHide = false;
         },
         err => { console.error(err); }
       )
     }
+
+    toLineEdit(lineId: String): void {
+      this.router.navigateByUrl(`requestlines/edit/${lineId}`);
+    }
+      
+    toLineCreate(): void {
+      this.router.navigateByUrl(`requestlines/create/${this.request.id}`);
+    }
+
 }

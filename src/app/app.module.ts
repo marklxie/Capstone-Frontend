@@ -14,7 +14,6 @@ import { UserlistComponent } from './User/userlist/userlist.component';
 import { RequestlistComponent } from './Request/requestlist/requestlist.component';
 import { ProductlistComponent } from './Product/productlist/productlist.component';
 import { VendorlistComponent } from './Vendor/vendorlist/vendorlist.component';
-import { RequestlinelistComponent } from './Requestline/requestlinelist/requestlinelist.component';
 import { MenuItemsComponent } from './Menu/menu-items/menu-items.component';
 import { UserDetailComponent } from './User/user-detail/user-detail.component';
 import { UserEditComponent } from './User/user-edit/user-edit.component';
@@ -35,6 +34,8 @@ import { RequestDetailComponent } from './Request/request-detail/request-detail.
 import { RequestLinesComponent } from './Request/request-lines/request-lines.component';
 import { RequestReviewListComponent } from './Request/request-review-list/request-review-list.component';
 import { RequestReviewItemComponent } from './Request/request-review-item/request-review-item.component';
+import { RequestlineEditComponent } from './Requestline/requestline-edit/requestline-edit.component';
+import { RequestlineCreateComponent } from './Requestline/requestline-create/requestline-create.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,6 @@ import { RequestReviewItemComponent } from './Request/request-review-item/reques
     RequestlistComponent,
     ProductlistComponent,
     VendorlistComponent,
-    RequestlinelistComponent,
     MenuItemsComponent,
     UserDetailComponent,
     UserEditComponent,
@@ -67,7 +67,9 @@ import { RequestReviewItemComponent } from './Request/request-review-item/reques
     RequestDetailComponent,
     RequestLinesComponent,
     RequestReviewListComponent,
-    RequestReviewItemComponent
+    RequestReviewItemComponent,
+    RequestlineEditComponent,
+    RequestlineCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -6,7 +6,6 @@ import { E404Component } from './core/Components/e404/e404.component';
 import { UserlistComponent } from './User/userlist/userlist.component';
 import { ProductlistComponent } from './Product/productlist/productlist.component';
 import { VendorlistComponent } from './Vendor/vendorlist/vendorlist.component';
-import { RequestlinelistComponent } from './Requestline/requestlinelist/requestlinelist.component';
 import { RequestlistComponent } from './Request/requestlist/requestlist.component';
 import { UserDetailComponent } from './User/user-detail/user-detail.component';
 import { UserEditComponent } from './User/user-edit/user-edit.component';
@@ -23,6 +22,8 @@ import { RequestDetailComponent } from './Request/request-detail/request-detail.
 import { RequestEditComponent } from './Request/request-edit/request-edit.component';
 import { RequestLinesComponent } from './Request/request-lines/request-lines.component';
 import { RequestReviewItemComponent } from './Request/request-review-item/request-review-item.component';
+import { RequestlineEditComponent } from './Requestline/requestline-edit/requestline-edit.component';
+import { RequestlineCreateComponent } from './Requestline/requestline-create/requestline-create.component';
 
 
 const routes: Routes = [
@@ -46,8 +47,6 @@ const routes: Routes = [
   {path:"vendors/detail/:id", component: VendorDetailComponent},
   {path:"vendors/edit/:id", component: VendorEditComponent},
   {path:"vendors/new", component: VendorCreateComponent},
-  //Request Line stuff
-  {path:"requestlines/list", component: RequestlinelistComponent},
   //Requests Links
   {path:"requests/list", component: RequestlistComponent},
   {path:"requests/new", component: RequestCreateComponent},
@@ -55,6 +54,9 @@ const routes: Routes = [
   {path:"requests/edit/:id", component: RequestEditComponent},
   {path:"requests/lines/:id", component: RequestLinesComponent},
   {path:"requests/review/:id", component: RequestReviewItemComponent},
+   //Request Line stuff
+   {path:"requestlines/edit/:id", component: RequestlineEditComponent},
+   {path:"requestlines/create/:id", component: RequestlineCreateComponent},
   {path:"**", component: E404Component}
 
 ];

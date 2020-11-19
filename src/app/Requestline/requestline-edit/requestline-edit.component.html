@@ -1,0 +1,15 @@
+<h3>Request Line Edit</h3>
+<button (click)="back()">Back</button>
+<table table="table" *ngIf=requestline>
+    <tr>
+        <td>Product</td>
+        <select [(ngModel)]=requestline.productId>
+            <option *ngFor="let product of products" [ngValue]=product.id>{{product.name}}</option>
+        </select>
+    </tr>
+    <tr>
+        <td>Quantity</td>
+        <input type="number" [(ngModel)]=requestline.quantity>
+    </tr>
+</table>
+<button (click)="save()">Save</button>
