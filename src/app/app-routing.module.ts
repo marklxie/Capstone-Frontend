@@ -22,6 +22,7 @@ import { RequestCreateComponent } from './Request/request-create/request-create.
 import { RequestDetailComponent } from './Request/request-detail/request-detail.component';
 import { RequestEditComponent } from './Request/request-edit/request-edit.component';
 import { RequestLinesComponent } from './Request/request-lines/request-lines.component';
+import { RequestReviewItemComponent } from './Request/request-review-item/request-review-item.component';
 
 
 const routes: Routes = [
@@ -29,25 +30,31 @@ const routes: Routes = [
   {path:"home", component: HomeComponent},
   {path:"about", component: AboutComponent},
   {path:"e404", component: E404Component},
+  //User Links
   {path:"users/list", component: UserlistComponent},
   {path:"users/detail/:id", component: UserDetailComponent},
   {path:"users/edit/:id", component: UserEditComponent},
   {path:"users/new", component: UserCreateComponent},
   {path:"login", component: UserLoginComponent},
+  //Product Links
   {path:"products/list", component: ProductlistComponent},  
   {path:"products/detail/:id", component: ProductDetailComponent},
   {path:"products/edit/:id", component: ProductEditComponent},
   {path:"products/new", component: ProductCreateComponent},
+  //Vendor Links
   {path:"vendors/list", component: VendorlistComponent},
   {path:"vendors/detail/:id", component: VendorDetailComponent},
   {path:"vendors/edit/:id", component: VendorEditComponent},
   {path:"vendors/new", component: VendorCreateComponent},
+  //Request Line stuff
   {path:"requestlines/list", component: RequestlinelistComponent},
+  //Requests Links
   {path:"requests/list", component: RequestlistComponent},
   {path:"requests/new", component: RequestCreateComponent},
-  {path:"requests/detail/:id", component:RequestDetailComponent},
-  {path:"requests/edit/:id", component:RequestEditComponent},
-  {path:"requests/lines/:id", component:RequestLinesComponent},
+  {path:"requests/detail/:id", component: RequestDetailComponent},
+  {path:"requests/edit/:id", component: RequestEditComponent},
+  {path:"requests/lines/:id", component: RequestLinesComponent},
+  {path:"requests/review/:id", component: RequestReviewItemComponent},
   {path:"**", component: E404Component}
 
 ];

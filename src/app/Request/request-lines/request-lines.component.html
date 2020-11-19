@@ -1,1 +1,46 @@
-<p>request-lines works!</p>
+<h3>Request Details and Lines</h3>
+<button (click)="back()">Back</button>
+<table class="table" *ngIf=request>
+    <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Request Owner</th>
+    </tr>
+    <tr>
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+        <td>{{request.user.username}}</td>
+    </tr>
+</table>
+
+<button>Create New Line</button>
+<h2>
+    Line Items for Request
+</h2>
+
+<table class="table">
+    <tr>
+        <th>Line Item Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr *ngFor="let line of requestRelatedLines">
+        <td>{{line.id}}</td>
+        <td>{{line.product.name}}</td>
+        <td>{{line.quantity}}</td>
+        <td>
+            <button>Edit</button>
+        </td>
+        <td>
+            <button (click)="revealDelete(line.id)" value={{line.id}} id={{line.id}}>Delete</button>
+            <button (click)="doDelete(line.id)" *ngIf=buttonHide>Yes</button>
+            <button (click)="doNotDelete()" *ngIf=buttonHide>No</button>
+        </td>
+    </tr>
+</table>

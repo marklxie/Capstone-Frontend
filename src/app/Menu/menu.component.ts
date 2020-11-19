@@ -14,6 +14,8 @@ export class MenuComponent implements OnInit {
     private system:SystemService
   ) { } 
 
+  isAdmin: boolean = this.system.loggedInUser.isAdmin;
+
   ngOnInit(): void {
     let home: Menu = {display:"Home", route:"/home"};
     let about: Menu = {display:"About", route:"/about"};

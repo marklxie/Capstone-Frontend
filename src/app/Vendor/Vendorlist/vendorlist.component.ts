@@ -24,7 +24,6 @@ export class VendorlistComponent implements OnInit {
         this.vendors = res;},
       err => {console.error(err)}
     )
-    console.log(this.keys);
   }
 
 }

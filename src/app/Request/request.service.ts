@@ -41,5 +41,11 @@ export class RequestService {
   rejectRequest(request: PRequest): Observable<any>{
     return this.http.put(`${baseurl}/reject/${request.id}`, request) as Observable<any>;
   }
+
+  reviewRequest(request: PRequest): Observable<any>{
+    return this.http.put(`${baseurl}/review/${request.id}`, request) as Observable<any>;
+  }
+
+  
 }
 
