@@ -42,10 +42,17 @@ export class RequestService {
     return this.http.put(`${baseurl}/reject/${request.id}`, request) as Observable<any>;
   }
 
+  approveRequest(request: PRequest): Observable<any>{
+    return this.http.put(`${baseurl}/approve/${request.id}`, request) as Observable<any>;
+  }
+
   reviewRequest(request: PRequest): Observable<any>{
     return this.http.put(`${baseurl}/review/${request.id}`, request) as Observable<any>;
   }
 
+  listReview(userId: number): Observable<PRequest[]>{
+    return this.http.get(`${baseurl}/review/${userId}`) as Observable<PRequest[]>;
+  }
   
 }
 

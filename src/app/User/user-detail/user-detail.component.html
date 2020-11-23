@@ -31,6 +31,6 @@
     </tr>
 </table>
 
-<button (click)="hide()" >Delete</button>
+<button *ngIf=loggedUser.isAdmin (click)="hide()" >Delete</button>
 <button *ngIf=buttonHide (click)="hide(); delete()">Yes, Delete</button>
 <button *ngIf=buttonHide (click)="hide()" >No, Do not Delete</button>

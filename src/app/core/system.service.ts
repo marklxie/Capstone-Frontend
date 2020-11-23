@@ -28,6 +28,7 @@ export class SystemService {
   usercurrent():void{
         localStorage.setItem('user', JSON.stringify(this.loggedInUser));
         this.userSubject.next(this.loggedInUser);
+        
   }
   logout():void{
     localStorage.clear();

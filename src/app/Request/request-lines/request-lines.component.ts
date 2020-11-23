@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Requestline } from 'src/app/Requestline/requestline.class';
 import { RequestlineService } from 'src/app/Requestline/requestline.service';
+import { RequestReviewItemComponent } from '../request-review-item/request-review-item.component';
+import { RequestReviewListComponent } from '../request-review-list/request-review-list.component';
 import { PRequest } from '../request.class';
 import { RequestService } from '../request.service';
 
@@ -81,8 +83,7 @@ export class RequestLinesComponent implements OnInit {
           this.buttonHide = false;
         },
         err => { console.error(err); }
-      )
-    }
+      )}
 
     toLineEdit(lineId: String): void {
       this.router.navigateByUrl(`requestlines/edit/${lineId}`);
@@ -92,4 +93,14 @@ export class RequestLinesComponent implements OnInit {
       this.router.navigateByUrl(`requestlines/create/${this.request.id}`);
     }
 
+    review(): void{
+      this.requestsvc.reviewRequest(this.request).subscribe(
+        res => {console.log(res), this.refresh();},
+        err => {console.error(err)}
+      )
+    }
+
+    fixDigit(num:number):string{
+      return num.toFixed(2);
+    }
 }

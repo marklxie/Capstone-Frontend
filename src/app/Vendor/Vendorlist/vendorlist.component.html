@@ -2,19 +2,19 @@
 <input [(ngModel)]="searchcriteria" type="text" placeholder="search">
 <table class="table" *ngIf=vendors>
     <tr>
-        <th>Id</th>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Zip</th>
+        <th (click)="changeSort('id')">Id</th>
+        <th (click)="changeSort('code')">Code</th>
+        <th (click)="changeSort('name')">Name</th>
+        <th (click)="changeSort('address')">Address</th>
+        <th (click)="changeSort('city')">City</th>
+        <th (click)="changeSort('state')">State</th>
+        <th (click)="changeSort('zip')">Zip</th>
         <th>Phone Number</th>
         <th>Email</th>
         <th>Detail</th>
         <th>Edit</th>
     </tr>
-    <tr *ngFor="let vendor of vendors | search:keys:searchcriteria" >
+    <tr *ngFor="let vendor of vendors | search:keys:searchcriteria | sort:sortcriteria:asc"  >
         <td>{{vendor.id}}</td>
         <td>{{vendor.code}}</td>
         <td>{{vendor.name}}</td>

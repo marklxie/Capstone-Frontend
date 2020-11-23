@@ -1,1 +1,45 @@
-<p>request-review-item works!</p>
+<h3>Request Details and Lines</h3>
+<button (click)="back()">Back</button>
+<table class="table" *ngIf=request>
+    <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>Request Owner</th>
+    </tr>
+    <tr>
+        <td>{{request.id}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total}}</td>
+        <td>{{request.user.username}}</td>
+    </tr>
+</table>
+
+<h2>
+    Line Items for Request
+</h2>
+<table class="table" *ngIf=request>
+    <tr>
+        <th>Line Item Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Product Price</th>
+        <th>Subtotal</th>
+    </tr>
+    <tr *ngFor="let line of request.requestlines">
+        <td>{{line.id}}</td>
+        <td>{{line.product.name}}</td>
+        <td>{{line.quantity}}</td>
+        <td>${{line.product.price}}</td>
+        <td>${{line.product.price * line.quantity}}</td>
+    </tr>
+</table>
+<button (click)="approve()">Approve</button>
+<button (click)="beforeReject()">Reject</button>
+<div>
+    <input type="text" *ngIf=ifReject [(ngModel)]="request.rejectionReason">
+    <button *ngIf=ifReject (click)="reject()">Yes, Reject</button>
+    <button *ngIf=ifReject (click)="beforeReject()">No, don't reject</button>
+</div>

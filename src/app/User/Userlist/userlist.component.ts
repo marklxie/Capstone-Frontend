@@ -15,11 +15,20 @@ export class UserlistComponent implements OnInit {
     private usersvc: UserService,
     private system: SystemService
     ) { }
+
   users: User[];
+  loggedUser: User;
   keys: string[];
   searchcriteria: string = "";
+  asc: boolean = true;
+  sortcriteria: string = "id";
+
   ngOnInit(): void {
     console.log(this.system.loggedInUser);
+    this.system.user.subscribe(
+      res => {this.loggedUser = res;},
+      err => {console.error(err);}
+    )
     this.usersvc.list().subscribe(
       res => { 
         console.log(res);
@@ -31,5 +40,13 @@ export class UserlistComponent implements OnInit {
     console.log(this.keys);
   }
 
+  changeSort(column: string):void{
+    if(column == this.sortcriteria){
+      this.asc = !this.asc;
+      return;
+    }
+    this.sortcriteria = column;
+    this.asc = true;
+  }
   
 }

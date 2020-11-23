@@ -1,4 +1,4 @@
-<nav> 
+<nav *ngIf=user> 
        <app-menu-items [menu]="menuItem" *ngFor="let menuItem of menu"></app-menu-items>
        <a (click)="logout()" routerLink="/login">Logout</a>
 </nav>

@@ -11,15 +11,16 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
-  username: string = "";
-  password: string = "";
-  user: User = null;
+
   constructor(
     private usersvc: UserService,
     private router: Router,
     private system: SystemService
   ) { }
-
+  username: string = "";
+  password: string = "";
+  user: User = null;
+  incorrectInput: boolean = false;
   ngOnInit(): void {
   }
 
@@ -34,6 +35,7 @@ export class UserLoginComponent implements OnInit {
         this.router.navigateByUrl("/home");},
        err => {
         console.log(err);
+        this.incorrectInput = true;
          this.username = ""; 
          this.password = "";}
        )

@@ -16,13 +16,23 @@ export class ProductlistComponent implements OnInit {
     products: Product[];
     keys: string[] = Object.getOwnPropertyNames(new Product);
     searchcriteria: string = "";
+    asc: boolean = true;
+    sortcriteria: string = "id";
+  
 
   ngOnInit(): void {
     this.productsvc.list().subscribe(
       res => {console.log(res), this.products = res;},
       err => {console.error(err)}
     )
-
   }
 
+  changeSort(column: string):void{
+    if(column == this.sortcriteria){
+      this.asc = !this.asc;
+      return;
+    }
+    this.sortcriteria = column;
+    this.asc = true;
+  }
 }

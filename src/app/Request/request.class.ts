@@ -5,7 +5,7 @@ export class PRequest{
     id: number = 0;
     description: string = "";
     justification: string;
-    rejectionreason: string;
+    rejectionReason: string;
     deliveryMode: string = "";
     status: string = "NEW";
     total: number = 0;

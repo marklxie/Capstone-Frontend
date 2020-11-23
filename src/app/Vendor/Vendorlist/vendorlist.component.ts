@@ -9,12 +9,16 @@ import { VendorService } from '../vendor.service';
 })
 export class VendorlistComponent implements OnInit {
 
-  vendors: Vendor[];
-  keys: String[] = Object.getOwnPropertyNames(new Vendor());
-  searchcriteria: string = "";
+
   constructor(
     private vendorsvc: VendorService,
   ) { }
+
+  vendors: Vendor[];
+  keys: String[] = Object.getOwnPropertyNames(new Vendor());
+  searchcriteria: string = "";
+  asc: boolean = true;
+  sortcriteria: string = "id";
   
   ngOnInit(): void {
     console.log(this.keys);
@@ -26,4 +30,12 @@ export class VendorlistComponent implements OnInit {
     )
   }
 
+  changeSort(column: string):void{
+    if(column == this.sortcriteria){
+      this.asc = !this.asc;
+      return;
+    }
+    this.sortcriteria = column;
+    this.asc = true;
+  }
 }

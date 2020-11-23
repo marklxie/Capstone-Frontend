@@ -9,5 +9,6 @@
         <input [(ngModel)]="password">
     </tr>
 </table>
+<span *ngIf=incorrectInput>The username/password was incorrect</span>
 <button (click)="login()">Login</button>
 <button (click)="check()">Check</button>

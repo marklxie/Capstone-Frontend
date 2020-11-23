@@ -14,16 +14,15 @@
         <th>Details</th>
         <th>Edit</th>
         <th>Add Lines</th>
-        <th>Review Request</th>
     </tr>
     <tr *ngFor="let request of requests | search:keys:searchcriteria" >
         <td>{{request.id}}</td>
         <td>{{request.description}}</td>
         <td>{{request.justification}}</td>
-        <td>{{request.rejectionreason}}</td>
+        <td>{{request.rejectionReason}}</td>
         <td>{{request.deliveryMode}}</td>
         <td>{{request.status}}</td>
-        <td>{{request.total}}</td>
+        <td>${{fixDigit(request.total)}}</td>
         <td>{{request.userId}}</td>
         <td>{{request.user.firstname}} {{request.user.lastname}}</td>
         <td>
@@ -34,9 +33,6 @@
         </td>
         <td>
             <button routerLink="/requests/lines/{{request.id}}">Go</button>
-        </td>
-        <td>
-            <button routerLink="/requests/review/{{request.id}}">Review</button>
         </td>
     </tr>
 </table>

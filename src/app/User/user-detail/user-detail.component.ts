@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from 'src/app/core/system.service';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 
@@ -10,14 +11,18 @@ import { UserService } from '../user.service';
 })
 export class UserDetailComponent implements OnInit {
 
-  user: User;
-  buttonHide:boolean = false;
+  
 
   constructor(
     private usersvc:UserService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private system: SystemService
   ) { }
+
+  user: User;
+  buttonHide:boolean = false;
+  loggedUser: User;
   
   ngOnInit(): void {
     let id = +this.route.snapshot.params.id;
@@ -29,6 +34,10 @@ export class UserDetailComponent implements OnInit {
       err =>{ 
         console.log(err)
       }
+    )
+    this.system.user.subscribe(
+      res => {this.loggedUser = res;},
+      err => {console.error(err);}
     )
   }
 

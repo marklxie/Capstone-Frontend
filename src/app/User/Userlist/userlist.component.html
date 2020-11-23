@@ -1,19 +1,24 @@
 
 <h3> User List</h3>
 <input [(ngModel)]="searchcriteria" type="text" placeholder="search">
+
+<!--Potential Drop down Menu for sorting, however would need to simplify
+     <select [(ngModel)]="sortcriteria">
+    <option *ngFor="let key of keys">{{key}}</option>
+</select> -->
 <table class="table" *ngIf=users>
     <tr>
-        <th>Id</th>
-        <th>Username</th>
-        <th>Name</th>
+        <th (click)="changeSort('id')">Id</th>
+        <th (click)="changeSort('username')">Username</th>
+        <th (click)="changeSort('lastname')">Name</th>
         <th>Phone Number</th>
         <th>Email</th>
         <th>IsReviewer</th>
         <th>IsAdmin</th>
         <th>Detail</th>
-        <th>Edit</th>
+        <th *ngIf=loggedUser.isAdmin>Edit</th>
     </tr>
-    <tr *ngFor="let user of users | search:keys:searchcriteria" >
+    <tr *ngFor="let user of users | search:keys:searchcriteria | sort:sortcriteria:asc" >
         <td>{{user.id}}</td>
         <td>{{user.username}}</td>
         <td>{{user.lastname}}, {{user.firstname}}</td>
@@ -24,7 +29,7 @@
         <td routerLink="/users/detail/{{user.id}}">
             <button>Detail</button>
         </td>
-        <td routerLink="/users/edit/{{user.id}}">
+        <td *ngIf=loggedUser.isAdmin routerLink="/users/edit/{{user.id}}">
             <button>Edit</button>
         </td>
     </tr>

@@ -2,17 +2,17 @@
 <input [(ngModel)]="searchcriteria" type="text" placeholder="search">
 <table class="table" *ngIf=products>
     <tr>
-        <th>Id</th>
-        <th>Part Number</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Unit</th>
+        <th (click)="changeSort('id')">Id</th>
+        <th (click)="changeSort('partNumber')">Part Number</th>
+        <th (click)="changeSort('name')">Name</th>
+        <th (click)="changeSort('price')">Price</th>
+        <th>Unit</th> 
         <th>PhotoPath</th>
         <th>Vendor</th>
         <th>Detail</th>
         <th>Edit</th>
     </tr>
-    <tr *ngFor="let product of products | search:keys:searchcriteria" >
+    <tr *ngFor="let product of products | search:keys:searchcriteria | sort:sortcriteria:asc" >
         <td>{{product.id}}</td>
         <td>{{product.partNumber}}</td>
         <td>{{product.name}}</td>
