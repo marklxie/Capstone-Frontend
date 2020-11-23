@@ -25,32 +25,28 @@ export class RequestLinesComponent implements OnInit {
 
     ngOnInit(): void {
 
-      let id = +this.route.snapshot.params.id;
-      this.lineitemsvc.listByRequest(id).subscribe(
-        res => {
-          console.debug(res);
-          // for (let lines of res) {
-          //   if (lines.requestId == id) {
-          //     this.requestRelatedLines.push(lines);
-          //   }
-          // }
-          this.requestRelatedLines = res;
-          console.debug(this.requestRelatedLines);
-        },
-        err => {console.error(err);}
-      )
+      this.refresh();
+      // let id = +this.route.snapshot.params.id;
+      // this.lineitemsvc.listByRequest(id).subscribe(
+      //   res => {
+      //     console.debug(res);
+      //     this.requestRelatedLines = res;
+      //     console.debug(this.requestRelatedLines);
+      //   },
+      //   err => {console.error(err);}
+      // )
 
-      this.requestsvc.getRequest(id).subscribe(
-        res => {
-          console.debug(res);
-          this.request = res;
-          console.log(this.request.userId);
-          console.log(this.request.user);
-        },
-        err => {
-          console.error(err);
-        }
-      )
+      // this.requestsvc.getRequest(id).subscribe(
+      //   res => {
+      //     console.debug(res);
+      //     this.request = res;
+      //     console.log(this.request.userId);
+      //     console.log(this.request.user);
+      //   },
+      //   err => {
+      //     console.error(err);
+      //   }
+      // )
     }
 
     back(): void{
@@ -67,6 +63,13 @@ export class RequestLinesComponent implements OnInit {
       this.buttonHide = false;
     }
 
+    refresh(): void{
+      let id = this.route.snapshot.params.id;
+      this.requestsvc.getRequest(id).subscribe(
+        res =>{console.debug(res); this.request = res;},
+        err =>{ console.error(err);}
+      )
+    }
     doDelete(lineId: string): void {
       let id = (<HTMLInputElement>document.getElementById(lineId)).value;
       let idNum = parseInt(id);
@@ -74,7 +77,7 @@ export class RequestLinesComponent implements OnInit {
       this.lineitemsvc.delete(idNum).subscribe(
         res => {
           console.log(res);
-          location.reload();
+          this.refresh();
           this.buttonHide = false;
         },
         err => { console.error(err); }

@@ -1,1 +1,42 @@
-<p>request-detail works!</p>
+<h3>Request Details</h3>
+<button (click)="back()">Back</button>
+<table class="table" *ngIf="request">
+    <tr>
+        <th>Id</th>
+        <input type="text" value="{{request.id}}" disabled>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <input type="text" value="{{request.description}}" disabled>
+    </tr>
+    <tr>
+        <th>Justification for Request</th>
+        <input type="text" value="{{request.justification}}" disabled>
+    </tr>
+    <tr>
+        <th>Rejection Reason for Request</th>
+        <input type="text" value="{{request.rejectionreason}}" disabled>
+    </tr>
+    <tr>
+        <th>Delivery Mode</th>
+        <input type="text" value="{{request.deliveryMode}}" disabled>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <input type="text" value="{{request.status}}" disabled>
+    </tr>
+    <tr>
+        <th>Total Cost of Request</th>
+        <input type="text" value="{{request.total}}" disabled>
+    </tr>
+    <tr *ngIf=request.user>
+        <th>Request Owner</th>
+        <input type="text" value="{{request.user.lastname}}, {{request.user.firstname}}" disabled>
+    </tr>
+
+</table>
+
+<button (click)="hideButton()">Delete</button>
+<button *ngIf=buttonHide (click)="hideButton(); delete()">Yes, Delete</button>
+<button *ngIf=buttonHide (click)="hideButton()" >No, Do not Delete</button>
+<p *ngIf=textHide>There are still request lines.</p>

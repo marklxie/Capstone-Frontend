@@ -22,9 +22,12 @@
         <th>Photopath</th>
         <input type="text" [(ngModel)]="product.photopath" >
     </tr>
-    <select [(ngModel)] = product.vendorId>
-        <option *ngFor="let vendor of vendors" [ngValue]=vendor.id>{{vendor.name}}</option>
-    </select>
+    <tr>
+        <th>Vendor</th>
+        <select [(ngModel)]=product.vendorId>
+            <option *ngFor="let vendor of vendors" [ngValue]=vendor.id>{{vendor.name}}</option>
+        </select>
+    </tr>
 </table>
 <button (click)="save()">Save</button>
 <button (click)="check()">Check</button>

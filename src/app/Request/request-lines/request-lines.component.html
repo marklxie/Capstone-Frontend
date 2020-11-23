@@ -20,19 +20,24 @@
 <h2>
     Line Items for Request
 </h2>
+<button>Review</button>
 <button (click)="toLineCreate()">Create New Request Line</button>
-<table class="table">
+<table class="table" *ngIf=request>
     <tr>
         <th>Line Item Id</th>
         <th>Product</th>
         <th>Quantity</th>
+        <th>Product Price</th>
+        <th>Subtotal</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>
-    <tr *ngFor="let line of requestRelatedLines">
+    <tr *ngFor="let line of request.requestlines">
         <td>{{line.id}}</td>
         <td>{{line.product.name}}</td>
         <td>{{line.quantity}}</td>
+        <td>${{line.product.price}}</td>
+        <td>${{line.product.price * line.quantity}}</td>
         <td>
             <button (click)="toLineEdit(line.id)">Edit</button>
         </td>

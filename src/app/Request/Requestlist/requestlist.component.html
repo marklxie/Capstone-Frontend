@@ -11,6 +11,8 @@
         <th>Total</th>
         <th>User Id</th>
         <th>Request User</th>
+        <th>Details</th>
+        <th>Edit</th>
         <th>Add Lines</th>
         <th>Review Request</th>
     </tr>
@@ -24,6 +26,12 @@
         <td>{{request.total}}</td>
         <td>{{request.userId}}</td>
         <td>{{request.user.firstname}} {{request.user.lastname}}</td>
+        <td>
+            <button routerLink="/requests/detail/{{request.id}}">Details</button>
+        </td>
+        <td>
+            <button routerLink="/requests/edit/{{request.id}}">Edit</button>
+        </td>
         <td>
             <button routerLink="/requests/lines/{{request.id}}">Go</button>
         </td>

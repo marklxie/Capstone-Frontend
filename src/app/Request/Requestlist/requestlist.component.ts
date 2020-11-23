@@ -26,7 +26,7 @@ export class RequestlistComponent implements OnInit {
   user: User;
   searchcriteria: string = "";
   keys: string[] = ["id", "description", "justification","rejectionreason",
-                    "deliveryMode","status","total", "userId", "user"];
+                    "deliveryMode","status","total", "userId", "user.firstname"];
 
   ngOnInit(): void {
     this.requestsvc.list().subscribe(

@@ -1,1 +1,13 @@
-<p>request-edit works!</p>
+<h3>Request Details</h3>
+<button (click)="back()">Back</button>
+<table class="table" *ngIf="request">
+    <tr>
+        <th>Description</th>
+        <input type="text" [(ngModel)]="request.description" >
+    </tr>
+    <tr>
+        <th>Delivery Mode</th>
+        <input type="text" [(ngModel)]="request.deliveryMode" >
+    </tr>
+</table>
+<button (click)="change()">Edit</button>
