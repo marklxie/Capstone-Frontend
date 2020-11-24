@@ -31,13 +31,13 @@ export class UserlistComponent implements OnInit {
     )
     this.usersvc.list().subscribe(
       res => { 
-        console.log(res);
+        //console.log(res);
         this.users = res;},
       err => {console.error(err)}
     )
 
     this.keys = Object.getOwnPropertyNames(new User);
-    console.log(this.keys);
+    //console.log(this.keys);
   }
 
   changeSort(column: string):void{

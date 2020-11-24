@@ -28,6 +28,7 @@ export class RequestlistComponent implements OnInit {
   keys: string[] = ["id", "description", "justification","rejectionreason",
                     "deliveryMode","status","total", "userId"];
   
+  
   ngOnInit(): void {
     this.requestsvc.list().subscribe(
       res => {console.log(res), this.requests = res;},
@@ -40,7 +41,7 @@ export class RequestlistComponent implements OnInit {
     this.user = this.system.loggedInUser;
   }
   fixDigit(num:number):string{
-    return num.toFixed(2);
+    return "$"+num.toFixed(2);
   }
 
 }

@@ -27,6 +27,7 @@ export class RequestlineCreateComponent implements OnInit {
   request: PRequest;
 
   ngOnInit(): void {
+   
     let id = +this.route.snapshot.params.id;
     this.productsvc.list().subscribe(
       res => {
@@ -37,7 +38,6 @@ export class RequestlineCreateComponent implements OnInit {
         console.error(err);
       }
     )
-
     this.requestline.requestId = id;
   }
   
@@ -56,6 +56,10 @@ export class RequestlineCreateComponent implements OnInit {
     this.requestsvc.getRequest(id).subscribe(
       res =>{console.debug(res); this.request = res;},
       err =>{ console.error(err);}
+    )
+    this.requestlinesvc.list().subscribe(
+      res =>{console.debug(res)},
+      err => {console.debug(err)}
     )
   }
 }

@@ -35,4 +35,8 @@ export class ProductlistComponent implements OnInit {
     this.sortcriteria = column;
     this.asc = true;
   }
+
+  fixDigit(num:number):string{
+    return "$"+num.toFixed(2);
+  }
 }

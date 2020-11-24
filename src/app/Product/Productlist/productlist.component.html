@@ -1,3 +1,4 @@
+<div>
 <h3>Product List</h3>
 <input [(ngModel)]="searchcriteria" type="text" placeholder="search">
 <table class="table" *ngIf=products>
@@ -16,7 +17,7 @@
         <td>{{product.id}}</td>
         <td>{{product.partNumber}}</td>
         <td>{{product.name}}</td>
-        <td>{{product.price}}</td>
+        <td>{{fixDigit(product.price)}}</td>
         <td>{{product.unit}}</td>
         <td>{{product.photopath}}</td>
         <td>{{product.vendor.name}}</td>
@@ -29,3 +30,4 @@
     </tr>
 </table>
 <button routerLink="/products/new/">Create New Product</button>
+</div>

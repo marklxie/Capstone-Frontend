@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from 'src/app/core/system.service';
+import { User } from 'src/app/User/user.class';
 import { Vendor } from '../vendor.class';
 import { VendorService } from '../vendor.service';
 
@@ -9,14 +11,18 @@ import { VendorService } from '../vendor.service';
   styleUrls: ['./vendor-detail.component.css']
 })
 export class VendorDetailComponent implements OnInit {
-  vendor: Vendor;
-  buttonHide: boolean = false;
+
   constructor(
     private vendorsvc: VendorService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private system: SystemService
   ) { }
 
+  vendor: Vendor;
+  buttonHide: boolean = false;
+  loggedUser:User;
+  
   ngOnInit(): void {
     let id = +this.route.snapshot.params.id;
     this.vendorsvc.getVendor(id).subscribe(
@@ -27,6 +33,10 @@ export class VendorDetailComponent implements OnInit {
       err =>{ 
         console.log(err)
       }
+    )
+    this.system.user.subscribe(
+      res => {this.loggedUser = res;},
+      err => {console.error(err);}
     )
   }
 

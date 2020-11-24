@@ -101,6 +101,6 @@ export class RequestLinesComponent implements OnInit {
     }
 
     fixDigit(num:number):string{
-      return num.toFixed(2);
+      return "$"+num.toFixed(2);
     }
 }

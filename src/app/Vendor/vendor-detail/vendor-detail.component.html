@@ -1,6 +1,6 @@
 <h3>Vendor Details</h3>
 <button (click)="back()">Back</button>
-<table *ngIf="vendor">
+<table *ngIf="vendor" class="table table-sm">
     <tr>
         <th>Code</th>
         <input type="text" [(ngModel)]="vendor.code" disabled>
@@ -41,6 +41,8 @@
     </tr>
 </table>
 
-<button (click)="hide()" >Delete</button>
-<button *ngIf=buttonHide (click)="hide(); delete()">Yes, Delete</button>
-<button *ngIf=buttonHide (click)="hide()" >No, Do not Delete</button>
+<div *ngIf=loggedUser.isAdmin>
+<button (click)="hide()" class="delete">Delete</button>
+<button *ngIf=buttonHide (click)="hide(); delete()" class="delete btn-danger">Yes, Delete</button>
+<button *ngIf=buttonHide (click)="hide()" class="delete">No, Do not Delete</button>
+</div>

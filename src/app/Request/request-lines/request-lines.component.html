@@ -1,3 +1,4 @@
+<div>
 <h3>Request Details and Lines</h3>
 <button (click)="back()">Back</button>
 <table class="table" *ngIf=request>
@@ -12,7 +13,7 @@
         <td>{{request.id}}</td>
         <td>{{request.description}}</td>
         <td>{{request.status}}</td>
-        <td>${{fixDigit(request.total)}}</td>
+        <td>{{fixDigit(request.total)}}</td>
         <td>{{request.user.username}}</td>
     </tr>
 </table>
@@ -20,9 +21,11 @@
 <h2>
     Line Items for Request
 </h2>
-<button (click)="review()">Review</button>
+<button (click)="review()" id="review">Review</button>
+
 <button (click)="toLineCreate()">Create New Request Line</button>
-<table class="table" *ngIf=request>
+<div *ngIf=request>
+<table class="table" *ngIf=request.requestlines>
     <tr>
         <th>Line Item Id</th>
         <th>Product</th>
@@ -36,8 +39,8 @@
         <td>{{line.id}}</td>
         <td>{{line.product.name}}</td>
         <td>{{line.quantity}}</td>
-        <td>${{fixDigit(line.product.price)}}</td>
-        <td>${{fixDigit(line.product.price * line.quantity)}}</td>
+        <td>{{fixDigit(line.product.price)}}</td>
+        <td>{{fixDigit(line.product.price * line.quantity)}}</td>
         <td>
             <button (click)="toLineEdit(line.id)">Edit</button>
         </td>
@@ -48,3 +51,5 @@
         </td>
     </tr>
 </table>
+</div>
+</div>

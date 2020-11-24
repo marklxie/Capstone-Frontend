@@ -1,0 +1,12 @@
+form{
+    position: fixed;
+    left: 40%;
+    top:30%;
+    border:black;
+    border-style:solid;
+    padding:15px;
+}
+input{
+    margin-left:10px;
+    margin-bottom:5px;
+}

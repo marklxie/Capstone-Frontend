@@ -1,5 +1,6 @@
+<div>
 <h3>Request Details</h3>
-<button (click)="back()">Back</button>
+<button id="back" (click)="back()">Back</button>
 <table class="table" *ngIf="request">
     <tr>
         <th>Id</th>
@@ -27,7 +28,7 @@
     </tr>
     <tr>
         <th>Total Cost of Request</th>
-        <input type="text" value="{{request.total}}" disabled>
+        <input type="text" value="{{fixDigit(request.total)}}" disabled>
     </tr>
     <tr *ngIf=request.user>
         <th>Request Owner</th>
@@ -40,3 +41,4 @@
 <button *ngIf=buttonHide (click)="hideButton(); delete()">Yes, Delete</button>
 <button *ngIf=buttonHide (click)="hideButton()" >No, Do not Delete</button>
 <p *ngIf=textHide>There are still request lines.</p>
+</div>

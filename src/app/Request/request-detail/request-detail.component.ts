@@ -58,8 +58,11 @@ export class RequestDetailComponent implements OnInit {
       this.hideText();
       console.log("There are still request lines")
     }
-
     return;
+  }
+
+  fixDigit(num:number):string{
+    return "$"+num.toFixed(2);
   }
 
 }

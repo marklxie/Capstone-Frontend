@@ -1,6 +1,6 @@
 <h3>Product Details</h3>
-<button (click)="back()">Back</button>
-<table class="table" *ngIf="product">
+<button (click)="back()" id="back">Back</button>
+<table *ngIf="product">
     <tr>
         <th>Id</th>
         <input type="text" value="{{product.id}}" disabled>
@@ -35,7 +35,8 @@
     </tr>
 
 </table>
-
-<button (click)="hide()">Delete</button>
-<button *ngIf=buttonHide (click)="hide(); delete()">Yes, Delete</button>
-<button *ngIf=buttonHide (click)="hide()" >No, Do not Delete</button>
+<div *ngIf=loggedUser.isAdmin>
+<button (click)="hide()" class="delete">Delete</button>
+<button *ngIf=buttonHide (click)="hide(); delete()" class="delete btn-danger">Yes, Delete</button>
+<button *ngIf=buttonHide (click)="hide()" class="delete">No, Do not Delete</button>
+</div>

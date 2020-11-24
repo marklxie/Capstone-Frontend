@@ -36,6 +36,10 @@ export class RequestReviewItemComponent implements OnInit {
     this.ifReject = !this.ifReject;
   }
 
+  fixDigit(num:number):string{
+    return "$"+num.toFixed(2);
+  }
+  
   reject():void{
     this.requestsvc.rejectRequest(this.request).subscribe(
       res => {
